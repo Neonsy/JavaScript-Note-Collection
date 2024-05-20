@@ -1,0 +1,47 @@
+---
+title: Home
+description: Get started with learning about the JavaScript programming language.
+template: splash
+hero:
+  title: |
+    Welcome to <span class="text-purple-500">Neons</span> <span class="text-amber-300">JavaScript Collection</span>
+  tagline: So you are interested in JavaScript, eh? Well then...
+  image:
+    file: ../../assets/hero.svg
+  actions:
+    - text: Get started
+      link: /JavaScript-Note-Collection/introduction
+      icon: right-arrow
+      variant: primary
+    - text: Check the Repository
+      link: https://github.com/DrNeonsy/JavaScript-Note-Collection
+      icon: external
+      attrs:
+        target: _blank
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Topics
+
+:::note[Work in progress]
+This Documentation is still in development, while I'm on my JavaScript learning journy. Therefore, some of the topics may be unfinished or missing. Which topics I'll actually cover is also not set in stone.
+:::
+
+<CardGrid stagger>
+	<Card title="JavaScript: The Core language" icon="seti:javascript">
+    Here we'll take a look at JavaScript and everything you need to know to get started modifying the web to your heart's content. From the core language to advanced concepts, everything's covered.
+	</Card>
+
+  <Card title="TypeScript" icon="seti:typescript">
+    Learn TypeScript and take your JavaScript skills to the next level! TypeScript is a statically typed superset of JavaScript that adds powerful features like type checking, interfaces, and classes. With TypeScript, you can catch errors early, improve code maintainability, and enhance productivity.
+	</Card>
+
+  <Card title="NodeJS" icon="node">
+    Learn how to harness the power of Node.js and build scalable, high-performance applications. From server-side scripting to creating APIs and handling databases, Node.js empowers you to take your JavaScript skills to new heights.
+	</Card>
+
+  <Card title="Mini Projects" icon="open-book">
+    In here you’ll find all mini projects I've created. These include the projects related to a certain module, as well as some extra ones!
+	</Card>
+</CardGrid>
