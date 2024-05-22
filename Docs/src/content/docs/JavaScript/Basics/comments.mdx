@@ -1,0 +1,88 @@
+---
+title: Comments
+description: A quick overview on how to write comments in JavaScript.
+prev:
+    label: Prerequisites
+    link: /JavaScript-Note-Collection/javascript/prerequisites
+next:
+    label: Output
+    link: /JavaScript-Note-Collection/javascript/basics/output
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Comments are a way to add information to your code. They are used to explain the code and make it easier to understand. This of course means, that whatever you are writing in a comment will not be executed by the browser, or whereever you run your code.
+
+## Single-line comments
+
+Single-line comments start with two forward slashes (`//`) and continue until the end of the line.
+
+They are usually used to explain a single line of code or to disable a line of code temporarily.
+
+:::note
+Try **`not to`**`make it a habbit` to disable code with comments if you are not going to use that specific line of code *ever* again. It would be better to remove unused code. 
+:::
+
+```js title="Single-line comment"
+thisIsCode(); // This is a single-line comment explaining that what you see on the left is theoretically a function call.
+```
+
+## Multi-line comments
+
+Multi-line comments start with a forward slash and an asterisk (`/*`) and end with an asterisk and a forward slash (`*/`).
+
+They are usually used to explain a block of code or to disable a block of code temporarily. They can also be used to add documentation to your code, which will come more important later on.
+
+```js title="Multi-line comment"
+
+/*
+ * This is a multi-line comment.
+ * It can contain multiple lines.
+ */
+
+thisIsCode();
+```
+
+## Disabling code
+
+To disable a line of code, or multiple lines, you can just add a comment at the beginning of the line or around a block of code.
+
+<Tabs>
+  <TabItem label="Normal Code">
+    ```js title="Comments.js"
+    doSomething();
+
+    thisIsTotally();
+        valid();
+            code();
+    ```
+  </TabItem>
+  <TabItem label="Single Line">
+    ```js title="Comments.js"
+    // doSomething();
+
+    thisIsTotally();
+        valid();
+            code();
+    ```
+  </TabItem>
+  <TabItem label="Multi Line">
+    ```js title="Comments.js"
+    doSomething();
+
+    /*thisIsTotally();
+        valid();
+            code(); */
+    ```
+  </TabItem>
+</Tabs>
+
+## Next
+
+This is the most rudementary thing you can learn when starting out. I thought it would be a good idea to explain it, because JavaScript in comparison to Python has two ways to comment your code.
+
+:::note
+If you've read my Python Collection, you might've notice my use of `"""` for multi-line comments. That is actually meant for `docblocks` in Python, which are used to add documentation to your code.
+:::
+
+Next up is how to display / print something to the console.

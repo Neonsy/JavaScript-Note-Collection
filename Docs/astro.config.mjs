@@ -68,6 +68,10 @@ export default defineConfig({
                     label: "JavaScript",
                     autogenerate: { directory: "JavaScript" },
                 },
+                {
+                    label: "References",
+                    autogenerate: { directory: "References" },
+                },
             ],
             customCss: ["./src/tailwind.css"],
         }),

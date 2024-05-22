@@ -1,0 +1,109 @@
+---
+title: Output
+description: Here you will learn how to display / print something to the console.
+tableOfContents:
+    maxHeadingLevel: 4
+prev:
+    label: Comments
+    link: /JavaScript-Note-Collection/javascript/basics/comments
+next:
+    label: Variables
+    link: /JavaScript-Note-Collection/javascript/basics/variables
+---
+
+Because JavaScript is meant to run logic and modify HTML, there is no way to display something to the website, without the use of _more advanced_ methods.
+
+This is why you'll learn how to use the `console.log()` method to display something to the console.
+
+## Print to the console
+
+As you may have already noticed with the comment section, there is code that has `()` parentheses. This is known as a function call.
+
+:::note[Remember]
+Functions are like mini-programs that can be called from within your code.
+:::
+
+The `console.log()` is brought to you by the langauge itself. It takes a variable or a string as an argument.
+
+### Outputting a string
+
+So this can simply be done by calling the function, using it's name and a pair of parentheses.
+
+```js title="Output.js"
+console.log("Hello world!");
+```
+
+```md title="Result"
+Hello world!
+```
+
+:::note
+In order to see the output in your browser, you need to open the console. This can in most browsers be done by pressing `F12` or `CTRL + SHIFT + I`. In Chrome, as well as Chromium based browsers, you can also open the console by pressing `CTRL + SHIFT + J`.
+:::
+
+### Outputting a variable
+
+This is the same as before but we need to have a [variable](/JavaScript-Note-Collection/javascript/basics/variables) defined beforehand.
+
+```js title="Output.js"
+let myName = "Timothy";
+console.log(myName);
+```
+
+```md title="Result"
+Timothy
+```
+
+### Outputting multiple variables
+
+This can be done by separating the variables with a comma.
+
+```js title="Output.js"
+let myName = "Timothy";
+let myAge = 23;
+console.log(myName, myAge);
+```
+
+```md title="Result"
+Timothy 23
+```
+
+### Outputting variables with a string
+
+To display a variable with a string, you can use concatenation. This can be achieved by using the `+` operator.
+
+```js title="Output.js"
+let myName = "Timothy";
+let myAge = 23;
+console.log("My name is " + myName + " and I am " + myAge + " years old.");
+```
+
+```md title="Result" "Timothy" "23"
+My name is Timothy and I am 23 years old.
+```
+
+#### Using template literals
+
+A template literal is a string that can contain variables. This allows us, to output a string with variables in it, instead of having to use concatenation.
+
+To do that, you need to wrap the string in <span class="text-orange-700 dark:text-orange-400 font-black">`</span> backticks. Your variables will then be wrapped in ``${}`` curly brackets.
+
+```js title="Output.js"
+let myName = "Timothy";
+let myAge = 23;
+console.log(`My name is ${myName} and I am ${myAge} years old.`);
+```
+
+```md title="Result" "Timothy" "23"
+My name is Timothy and I am 23 years old.
+```
+
+## Next
+
+Now that we have learned how to print something to the console, we can move on to the next topic. Can you guess what it is? I'll give you a hint: It has been a part of this topic / section / module / lession.
+
+:::note
+I'll probably use these terms interchangeably, because I don't really know which is which.
+:::
+
+Well, the navigation link is a dead giveaway, but yeah... The next topic is about variables.

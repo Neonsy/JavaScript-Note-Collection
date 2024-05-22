@@ -60,3 +60,7 @@ Like Python, NodeJS comes with a lot of built-in modules and libraries that make
 ## Topics Covered 🤖✨💻
 >[!NOTE]
 I'm going to order them based on the logical progression and importance, but feel free to rearrange as needed.
+
+1.  [Comments](./Basics/Comments.js)
+2.  [Output](./Basics/Output.js)
+3.  [Variables](./Basics/Variables.js)
