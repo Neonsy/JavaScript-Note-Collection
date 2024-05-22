@@ -1,0 +1,56 @@
+---
+title: Prerequisites
+description: A quick overview of the basics like comments and logging, as well as how to code along.
+tableOfContents: false
+sidebar:
+    order: -1
+prev:
+    label: Getting started
+    link: /JavaScript-Note-Collection/getting-started
+next: false
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+If you decide to follow along with this documentation, you'll probably want to have a directory, which has a similar structure to the following:
+
+<FileTree>
+
+-   your-project/
+    -   index.html
+    -   style.css
+    -   **index.js**
+
+</FileTree>
+
+The `index.js` file is where you'll be writing your code.
+
+In case you decide to use the files, provided by this [repository](https://github.com/DrNeonsy/JavaScript-Note-Collection/tree/main/Notes), you can find them in the `/JavaScript` directory, which is structured like the sidebar navigation.
+
+So your directory could look like this:
+
+<FileTree>
+
+-   your-project/
+    -   index.html
+    -   style.css
+    -   index.js
+    -   **Notes**
+        -   JavaScript/
+            -   README.md
+            -   Basics/
+                -   variables.js
+                -   ....
+            -   ....
+        -   .gitignore
+        -   README.md
+
+</FileTree>
+
+:::note
+When it comes to more complex projects like working with `NodeJs`, you'll want to use a different structure, but I'll show you how to do that as soon as it gets to that.
+:::
+
+In that case you can just load the `index.js` file in your `index.html` file, to run your own code and load one of the other files as needed. You can also just copy & paste from the `notes` into your own `index.js` file.
+
+## Next T.B.D
