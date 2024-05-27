@@ -65,3 +65,4 @@ I'm going to order them based on the logical progression and importance, but fee
 2.  [Output](./Basics/Output.js)
 3.  [Variables](./Basics/Variables.js)
 4.  [Operators: Numbers](./Operators/Numbers.js)
+5.  [Input](./Basics/Input.js)
