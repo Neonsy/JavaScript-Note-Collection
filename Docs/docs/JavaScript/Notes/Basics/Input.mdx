@@ -1,0 +1,215 @@
+---
+title: Input
+description: How to get user input in JavaScript.
+toc_max_heading_level: 4
+slug: /JavaScript/Basics/Input
+pagination_prev: JavaScript/Notes/Operators/Numbers
+pagination_next: JavaScript/Notes/Basics/Datatypes
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+This is the first more exciting part, when it comes to getting to know JavaScript.
+
+There are two main ways to get input from the user via JavaScript:
+
+- Using the `prompt()` function
+- Using an HTML textbox / input of some sort
+
+The first one is easier to use, but it's not very customizable.
+
+The latter is more customizable, but it's a bit more complicated to set up.
+
+:::info
+I'd recommend focusing on the `prompt()` first, becuase the textbox one requires knowledge, that will be covered later.
+
+So, if you are new to JavaScript, don't worry about the textbox one. It'll get easier later down the line.
+:::
+
+## Using the `prompt()` function
+
+As mentioned, the `prompt()` function is used to get input from the user.
+
+This function takes two parameters:
+
+- The text to display to the user
+- The default value to display
+
+Let's see an example:
+
+```js title="Input.js"
+const name = prompt("What is your name?", "John Doe");
+
+console.log(name);
+```
+
+If you run the code, the default value is already _typed_ in the textbox. That is something to consider when using the `prompt()` function.
+
+:::info
+There are other ways to handle default values, which you'll learn about in later sections.
+:::
+
+## Using an HTML textbox (<span className="font-bold text-yellow-700 dark:text-yellow-500">Advanced</span>)
+
+As mentioned at the beginning of this section, the textbox is a bit more complicated to set up, but it's a lot more customizable.
+
+The textbox or input, is an HTML element which can be used to get input from the user.
+
+To be able to fully grasp how to use it, you'll need to know the three following things:
+
+- ID's
+- Functions
+- Event listeners
+
+Let's take a look at the code first:
+
+:::info
+Now would be a fitting oppertunity to use the [Code Sandbox](/JavaScript-Note-Collection/docs/JavaScript/Code%20Sandbox), if you are not using an IDE.
+:::
+
+<Tabs>
+<TabItem value="HTML Code" label="HTML Code">
+```html title="index.html"
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label id="label" for="name">Your name:</label>
+        <br />
+        <input type="text" id="name" />
+        <br />
+        <button id="button">Send</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+```
+</TabItem>
+
+<TabItem value="JavaScript Code" label="JavaScript Code">
+```js title="index.js"
+const label = document.getElementById("label");
+
+const button = document.getElementById("button");
+
+button.onclick = function () {
+    const name = document.getElementById("name").value;
+
+    label.textContent = `Your name is ${name}`;
+};
+```
+</TabItem>
+
+<TabItem value="Full Code" label="Full Code">
+```html title="input.html"
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label id="label" for="name">Your name:</label>
+        <br />
+        <input type="text" id="name" />
+        <br />
+        <button id="button">Send</button>
+        <script>
+            const label = document.getElementById("label");
+
+            const button = document.getElementById("button");
+
+            button.onclick = function () {
+                const name = document.getElementById("name").value;
+
+                label.textContent = `Your name is ${name}`;
+            };
+        </script>
+    </body>
+</html>
+```
+</TabItem>
+</Tabs>
+
+### Quick explaination
+
+While the code is not that complicated, from a beginners perspective, it can be quite confusing.
+
+Therefore, let's take a quick look at the parts, that are important to understand.
+
+#### ID's
+
+In HTML, ID's (identifiers) are unique strings assigned to elements.
+They serve as a way to identify and reference specific elements within the document.
+Each ID must be unique within the HTML document, meaning no two elements can share the same ID.
+
+ID's are particularly useful for:
+
+-   Applying styles via CSS.
+-   Accessing and manipulating elements through JavaScript.
+-   And so much more.
+
+For example, if an element has an ID of `myElement`, you can use `document.getElementById('myElement')` in JavaScript to access and manipulate that element.
+
+:::info
+There are several ways to identify HTML elements, such as classes, attributes, and tag names, which will be covered in a later section.
+:::
+
+#### Functions
+
+In JavaScript, functions are blocks of code designed to perform particular tasks.
+They are executed when "called" (invoked).
+
+In the provided JavaScript code, functions are used to interact with HTML elements.
+For instance, a function might be triggered when a user clicks a button, and it could then retrieve the value from a textbox and display it in a label.
+
+#### Event listeners
+
+Event listeners in JavaScript are used to execute code in response to events triggered by user interactions, such as clicks, key presses, or mouse movements.
+
+In the provided JavaScript code, event listeners are used to perform actions when users interact with HTML elements.
+For example, an `onclick` event listener might be added to a button to call a function when the button is clicked.
+
+### Logical rundown
+
+Now that we've covered the basics, let's look at the code in a proper manner.
+
+#### HTML
+
+The `HTML` code features a label, a textbox, and a button.
+
+The label is used to display the text "`Your name:`".
+This is useful, because the textbox is empty, and the label is the only way to know what the textbox is for.
+Unless you use the placeholder attribute of the input element.
+
+The textbox is used to get the users name, or any input really.
+
+The button is used to provide an element, typically within the context of a form.
+
+#### JavaScript
+
+The first line of the JavaScript code is used to get a reference to the label element.
+
+The second line of the JavaScript code is used to get a reference to the button element.
+
+Then, we have the `onclick` event listener.
+The `onclick` event listener is used to execute code, usually a function, when the button is clicked.
+
+In this case, the function that is being executed `onclick`, gets the value from the textbox.
+Afterwards, the label is updated with the value from the textbox.
+
+## Next
+
+Now that was quite something wasn't it?
+
+I hope this article has provided you with a solid understanding of working with input in JavaScript.
+
+Don't worry if you've stumbled with the advanced input mechanism.
+Keep practicing and exploring.
+
+I think we should take a look at Datatypes next.

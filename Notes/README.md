@@ -36,6 +36,12 @@ While [this.README.md](/Notes/README.md) will probably change and this part remo
 -  NodeJS
 -  Mini Projects
 
+## Code Sandboxes
+
+If you want to play around with the code, you can use one of the corresponding sandboxes.
+
+### [JavaScript](https://stackblitz.com/edit/javascript-note-collection-javascript?file=README.md)
+
 ## Modules
 
 ### [JavaScript: The Core language](/Notes/JavaScript)

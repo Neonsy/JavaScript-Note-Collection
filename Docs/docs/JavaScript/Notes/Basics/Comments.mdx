@@ -1,0 +1,88 @@
+---
+title: Comments
+description: How to write comments in JavaScript.
+slug: /JavaScript/Basics/Comments
+pagination_prev: JavaScript/Prerequisites
+pagination_next: JavaScript/Notes/Basics/Output
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Comments are a way to add information to your code.
+They are used to explain the code and make it easier to understand.
+This of course means, that whatever you are writing in a comment will not be executed by the browser, or whereever you run your code.
+
+## Single-line comments
+
+Single-line comments start with two forward slashes (`//`) and continue until the end of the line.
+
+They are usually used to explain a single line of code or to disable a line of code temporarily.
+
+:::info
+Try **`not to`**`make it a habbit` to disable code with comments if you are not going to use that specific line of code _ever_ again.
+It would be better to remove unused code.
+:::
+
+```js title="Single-line comment"
+thisIsCode(); // This is a single-line comment explaining that what you see on the left is theoretically a function call.
+```
+
+## Multi-line comments
+
+Multi-line comments start with a forward slash and an asterisk (`/*`) and end with an asterisk and a forward slash (`*/`).
+
+They are usually used to explain a block of code or to disable a block of code temporarily.
+They can also be used to add documentation to your code, which will come more important later on.
+
+```js title="Multi-line comment"
+/*
+ * This is a multi-line comment.
+ * It can contain multiple lines.
+ */
+
+thisIsCode();
+```
+
+## Disabling code
+
+To disable a line of code, or multiple lines, you can just add a comment at the beginning of the line or around a block of code.
+
+<Tabs>
+  <TabItem value='Normal Code' label="Normal Code" default>
+    ```js title="Comments.js"
+    doSomething();
+
+    thisIsTotally();
+        valid();
+            code();
+    ```
+
+  </TabItem>
+  <TabItem value='Single Line' label="Single Line">
+    ```js title="Comments.js"
+    // doSomething();
+
+    thisIsTotally();
+        valid();
+            code();
+    ```
+
+  </TabItem>
+  <TabItem value='Multi Line' label="Multi Line">
+    ```js title="Comments.js"
+    doSomething();
+
+    /*thisIsTotally();
+        valid();
+            code(); */
+    ```
+
+  </TabItem>
+</Tabs>
+
+## Next
+
+This is the most rudementary thing you can learn when starting out.
+
+Next up is how to display / print something to the console.

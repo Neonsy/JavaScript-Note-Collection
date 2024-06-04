@@ -1,0 +1,18 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  @apply py-16 text-center relative overflow-hidden
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    @apply p-8
+  }
+}
+
+.buttons {
+  @apply flex justify-center items-center mt-8
+}

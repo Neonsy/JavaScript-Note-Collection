@@ -1,0 +1,168 @@
+---
+title: Const VS Let
+description: My thoughts on the differences between `const` and `let` in JavaScript.
+date: 2024-05-27
+toc_max_heading_level: 4
+authors: neonsy
+tags: [javascript, debated]
+slug: JavaScript/Const VS Let
+---
+
+import Image from '@theme/IdealImage';
+
+<Image img={require('./const vs let.png')} />
+
+As you may have already heard, JavaScript has two types of variables, `let` and `const`.
+You'd probably excpect that `const` stands for making a variable `constant`, or rather the value?
+Well, you can already see the problem.
+
+Before we dive into the topic, let's first understand what a `constant` variable is meant to do.
+When you make _something_ `constant`, you can't change the that due to immutability.
+
+{/* truncate */}
+
+:::info
+When something is `immutable`, it means that it can't be changed.
+However, what you actually make `immutable` differs from language to language.
+:::
+
+## Looking at C#
+
+In C#, the `const` keyword is used to define `constant` values that are known at compile time and cannot be changed.
+However, `const` can only be applied to primitive types and strings, not to objects.
+
+If you want to create an immutable object, you should use the readonly keyword instead.
+The readonly keyword can be used with fields, and it ensures that the field can only be assigned a value once, either at the time of declaration or in the constructor of the class.
+However, if the field is a reference type (<span className="text-orange-600 dark:text-orange-400">like an object</span>), you can still modify the attributes of the object it points to.
+
+## Looking at Java
+
+Java does not have a `const` keyword, but it has final which can be used to create `constants`.
+When applied to objects, the reference cannot be changed, but the object's fields can still be modified unless they are also declared as final.
+
+## So what about JavaScript?
+
+JavaScript, and therefore TypeScript, uses `const` to declare variables whose value cannot be reassigned.
+However, the properties of objects or elements of arrays can still be modified.
+
+Why? To understand that, let's look at pointers in C++.
+
+:::info
+Python does not even bother having a `const` keyword, which is kinda funny. When writing Python, you have to rely on naming conventions, to mark something as a `constant`.
+:::
+
+### Pointers in C++
+
+Don't worry, you do not have to like that topic in order to be able to follow along.
+
+#### The `const` keyword
+
+So, when you're having a pointer to a variable and that pointer is `constant`, what happens when you try to change the value of the variable that the pointer points to?
+
+Let's look at the following code:
+
+```cpp title="Const as a pointer"
+int num = 10;
+int* const ptr = &num;
+*ptr = 20;
+```
+
+This is allowed because the value pointed to by `ptr` can still be modified.
+
+As you can see, we have a variable `num` that has the value `10`.
+Then, we have a pointer `ptr` that points to the variable `num`.
+That pointer is `constant`, so we <span className="text-orange-600 dark:text-orange-400">can't change the value of **the pointer**.</span>
+
+How would you change the value of the variable that the pointer points to?
+Well, by just changing the value of the variable that the pointer points to, using the `*` syntax.
+
+#### What about `let`?
+
+We can draw a parallel between `let` and pointers as well, with the example being almost identical.
+
+Let's look at the following code again, with some slight changes:
+
+```cpp title="Let as a pointer"
+int num1 = 10;
+int num2 = 20;
+int* ptr = &num1;
+int* const ptr2 = ptr;
+ptr = &num2;
+```
+
+We still have a `const` pointer `ptr2`, that points to the value `num1` at first.
+The difference is that we can now change the value of the pointer `ptr2` is pointing to, because `ptr2` is points to a non `constant` pointer.
+
+All of that basically means that if `ptr` changes what it's pointing to, so does `ptr2`.
+
+#### Conclusion
+
+The conclusion is that while `const` and `let` in JavaScript have specific behaviors regarding reassignment and mutability, their equivalents in C++ can be understood through the use of pointers and constant pointers.
+
+`Const` is `*` and `let` is `**`.
+
+### Looking at objects in JavaScript
+
+So while the pointer example above points at the differences between `let` and `const`, there's still something we need to address.
+
+#### What is an object?
+
+Everything that is <span className="text-orange-600 dark:text-orange-400">not</span> a primitive type is an object in JavaScript.
+That includes arrays, functions, maps etc.
+
+A primitive type (<span className="text-orange-600 dark:text-orange-400">like an integer or a boolean</span>) stores its value directly in the memory allocated for the variable.
+For example, if you have an integer variable with a value of 5, the memory location for that variable will directly contain the number 5.
+
+An object however, stores a reference (<span className="text-orange-600 dark:text-orange-400">or pointer</span>) to the memory location where the actual data is stored.
+So, when you create an object, the variable holds the address of where the object's data is located, not the data itself.
+This means that if you have two variables referring to the same object, changes made through one variable will be reflected when accessing the object through the other variable.
+
+#### What does that have to do with `const`?
+
+When you use `const` in JavaScript, you are declaring that the variable cannot be reassigned.
+However, the properties of the object can still be changed, because you are holding a reference to the object, not the object itself.
+
+This in return means, that if you have a `const` variable for an integer, you cannot change the value of the variable, because the variable holds the value and not a reference.
+:::info
+This is a slight guess on my end, because it still depends on how the language handles these types in the end.
+Therefore, I'm basing my explaination on the mixture of what I know about the language and what I've learned about memory.
+:::
+
+## When to use `const` vs `let`?
+
+My personal recommendation is to always use `const` by default.
+This will help you avoid mistakes, especially when you're exporting something from a module.
+
+Only use `let` when you need to change the value of a variable.
+Preferably, use `let` when you want to make changes immediately after the initial declaration.
+
+For example, you could declare a variable with `let` and then use it in a `for` loop or a `switch` statement.
+
+> I mean, you can always switch it at the declaration, if the need arises.
+
+## True immutability
+
+When reading through all of this, you might be wondering: How can we make sure that the attributes / items of an object are not going to be changed?
+
+Well, JavaScript got you covered with the `object.freeze()` method.
+This method will freeze the object and prevent any changes to the object's attributes.
+
+:::info
+If you really want to freeze an object, keep in mind that based on the object's size and dependencies, this might get expansive.
+:::
+
+## Summary
+
+JavaScript has two types of variable declarations: `const` and `let`, where `const` prevents reassignment but doesn't make objects truly immutable.
+
+JavaScript's `const` allows object properties to be modified.
+
+:::info
+You could of course `const` attributes of a class, but that would probably defeat the purpose of using a class.
+:::
+
+Objects in JavaScript store references to memory locations, so using `const` means the reference can't change, but the object's properties still can.
+
+Use `const` by default to avoid reassignment errors, and use `let` when you need to change a variable's value.
+
+For true immutability, JavaScript provides the `Object.freeze()` method to prevent changes to an object's attributes.

@@ -1,0 +1,11 @@
+.features {
+  @apply flex items-center py-8 w-full
+}
+
+.featureImg {
+  @apply w-48
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}

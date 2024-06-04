@@ -1,0 +1,24 @@
+javascript:
+  label: JavaScript
+  permalink: /javascript
+  description: JavaScript related topics
+
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: TypeScript related topics
+
+nodejs:
+  label: Node.js
+  permalink: /nodejs
+  description: Node.js related topics
+
+news:
+  label: News
+  permalink: /news
+  description: News related information
+
+debated:
+  label: Debated
+  permalink: /debated
+  description: Hot debated topics
