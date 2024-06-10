@@ -68,3 +68,4 @@ I'm going to order them based on the logical progression and importance, but fee
 5.  [Input](./Basics/Input.js)
 6.  [Datatypes](./Basics/Datatypes.js)
 7.  [Math (Object)](./Basics/Math.js)
+8.  [Random Numbers](./Basics/Random%20Numbers.js)
