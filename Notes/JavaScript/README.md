@@ -67,3 +67,4 @@ I'm going to order them based on the logical progression and importance, but fee
 4.  [Operators: Numbers](./Operators/Numbers.js)
 5.  [Input](./Basics/Input.js)
 6.  [Datatypes](./Basics/Datatypes.js)
+7.  [Math (Object)](./Basics/Math.js)
