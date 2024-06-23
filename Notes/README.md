@@ -29,6 +29,11 @@ The `collection` is maintained in two ways:
 
 ## The Plan
 
+>[!NOTE]
+> This repository is under active development.
+>
+> I'm working on it in my spare time.
+
 While [this.README.md](/Notes/README.md) will probably change and this part removed towards the end, I'm going to lay out the rough plan / vision I have for this Note Collection.
 
 -  JavaScript: The Core language
